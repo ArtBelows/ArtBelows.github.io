@@ -1,2 +1,2 @@
-Артур Белоус/Hiroshi Arai
+# Артур Белоус/Hiroshi Arai
 Первый сайт
