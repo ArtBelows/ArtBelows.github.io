@@ -25,7 +25,7 @@ $(document).ready(function()
     $('a[href^="#"]').click(function()
     {
         var valHref = $(this).attr("href");
-        $('html, body').animate({scrollTop: $(valHeight).offset.top});
+        $('html, body').animate({scrollTop: $(valHeight).offset.top - $("nav").outerHeight()});
     });
     
     $("#select1 option").click(function()
