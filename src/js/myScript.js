@@ -62,6 +62,15 @@ $(document).ready(function()
     
     $(".image-link").magnificPopup({type:"image"});
     
+    const config = {threshold: [1.0]};
+    var observer = new IntersectionObserver(onEntry, config);
+    var elements = $(".role");
+    
+    elements.each(function(i, el)
+    {
+        observer.observe(el);
+    });
+    
     $('.roling').each(function()
     {
         $(this).prop('Counter',0).animate(
@@ -106,3 +115,14 @@ $(document).ready(function()
         $(".report3").addClass("rep_active");
     });
 });
+
+function onEntry(entry)
+{
+    entry.forEach(change =>
+    {
+        if(change.isIntersecting)
+        {
+            change.target.classList.add("roling");
+        }
+    });
+}
