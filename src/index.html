@@ -6,12 +6,12 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
-    <body>
-        
+    <body>        
         <div class = "load">
           <div class="container">
               <div class="row">
@@ -102,7 +102,7 @@
                     <div class="row">
                         <div class="col-8 offset-2">
                             <div class="summary_block">
-                                <h2>ОБО МНЕ</h2>
+                                <h2 class="wow pulse">ОБО МНЕ</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nesciunt impedit vero laboriosam quod porro facere beatae, mollitia dolorum hic soluta assumenda excepturi nostrum. Quisquam repellat debitis voluptas nesciunt eum!</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nesciunt impedit vero laboriosam quod porro facere beatae, mollitia dolorum hic soluta assumenda excepturi nostrum. Quisquam repellat debitis voluptas nesciunt eum!</p>
                                 <input type = "button" value = "Скачать резюме">
@@ -117,7 +117,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2>ЧТО Я УМЕЮ</h2>
+                            <h2 class="wow pulse">ЧТО Я УМЕЮ</h2>
                         </div>
                     </div>
                     <div class="about_table">
@@ -140,7 +140,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-10 offset-1 keys_head">
-                            <h2>КЕЙСЫ</h2>
+                            <h2 class="wow pulse">КЕЙСЫ</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, eaque enim necessitatibus aliquam.</p>
                             <div id="carouselExampleIndicators" class="carousel slide stream" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
@@ -199,12 +199,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2>РАСЧЕТ СТОИМОСТИ</h2>
+                            <h2 class="wow pulse">РАСЧЕТ СТОИМОСТИ</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xxl-8 col-xl-10 col-12 offset-xxl-2 offset-xl-1 offset-lg-1 choise">
-                            <form>
+                            <form action="php/test.php" method="post">
                                 ТИП САЙТА<br>
                                 <select id="select1">
                                     <option money="0" term="0" selected>Выберите пункт...</option>
@@ -248,12 +248,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2>НЕМНОГО СТАТИСТИКИ</h2>
+                            <h2 class="wow pulse">НЕМНОГО СТАТИСТИКИ</h2>
                         </div>
                     </div>
                     <div class="statistics_table" id="roling_number">
                         <ul>
-                            <li class="smile"><br><div class="role">292</div>
+                            <li class="smile"><br><div id="spec" class="role">292</div>
                             <p>ЧАСОВ РАБОТЫ</p></li>
                             <li class="slash_orange"><br><div class="role">27</div>
                             <p>СЧАСТЛИВЫХ КЛИЕНТОВ</p></li>
@@ -271,7 +271,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2>ОТЗЫВЫ</h2>
+                            <h2 class="wow pulse">ОТЗЫВЫ</h2>
                         </div>
                     </div>
                     <div class = "report_block">
@@ -301,7 +301,7 @@
                 <div class="container cont">
                     <div class="row">
                         <div class="col-12">
-                            <h2>МОИ КОНТАКТЫ</h2>
+                            <h2 class="wow pulse">МОИ КОНТАКТЫ</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
                     </div>
@@ -317,22 +317,22 @@
                     <div class="send">ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</div>
                     <div class="row">
                         <div class="col-xxl-8 col-xl-8 col-lg-8 col-12 offset-xxl-2 offset-xl-2 offset-lg-2 offset-0">
-                            <form>
+                            <form action="php/mail.php" method="post">
                                 <div class="name_mail">
-                                    <input type="text" placeholder="Имя">
-                                    <input type="text" placeholder="Email">
+                                    <input type="text" id="name" name="name" placeholder="Имя" required>
+                                    <input type="email" id="mail" name="mail" placeholder="Email" required>
                                 </div>
                                 <div class="textar">
-                                    <textarea placeholder="Сообщение"></textarea>
+                                    <textarea placeholder="Сообщение" id="message" name="message" required></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="send_button">
+                                            <input type="submit" value="Отправить">
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="send_button">
-                                <input type="button" value="Отправить">
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -350,6 +350,8 @@
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.maskedinput.min.js"></script>
+        <script src="js/wow.min.js"></script>
         <script src="js/myScript.js"></script>
     </body>
 </html>

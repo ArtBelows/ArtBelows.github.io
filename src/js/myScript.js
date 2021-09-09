@@ -2,6 +2,8 @@ var valPrice1 = 0, valPrice2 = 0, valPrice3 = 0, valTerm1 = 0, valTerm2 = 0, val
 
 $(document).ready(function()
 {
+    new WOW().init();
+    
     $(window).scroll(function()
     {
         var scrollDistance = $(window).scrollTop();
@@ -71,20 +73,6 @@ $(document).ready(function()
         observer.observe(el);
     });
     
-    $('.roling').each(function()
-    {
-        $(this).prop('Counter',0).animate(
-        {Counter: $(this).text()},
-        {
-            duration: 2500,
-            easing: 'swing',
-            step: function (now)
-            {
-                $(this).text(Math.ceil(now));
-            }
-        });
-    });
-    
     $(".dot1").click(function()
     {
         $(this).addClass("selected_dot");
@@ -114,6 +102,15 @@ $(document).ready(function()
         $(".report2").removeClass("rep_active");
         $(".report3").addClass("rep_active");
     });
+    
+    $("form").submit(function(event)
+    {
+        if($("#name").val() == "" || $("#mail").val() == "" || $("#message").val() == "")
+        {
+            event.preventDefault();
+            alert("У Вас пустое поле");
+        }
+    });
 });
 
 function onEntry(entry)
@@ -123,6 +120,24 @@ function onEntry(entry)
         if(change.isIntersecting)
         {
             change.target.classList.add("roling");
+            
+            $('.roling').each(function()
+            {
+                $(this).prop('Counter',0).animate(
+                {Counter: $(this).text()},
+                {
+                    duration: 2500,
+                    easing: 'swing',
+                    step: function(now)
+                    {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+                if($("#spec").text("291"))
+                {
+                    $("#spec").text(292);
+                }
+            });
         }
     });
 }
